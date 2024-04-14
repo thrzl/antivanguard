@@ -11,7 +11,7 @@ use windows_service::{
     Result,
 };
 
-const RIOT_LAUNCHER_PROCESS_NAME: &str = "RiotClientServices.exe";
+const VALORANT_PROCCESS_NAME: &str = "VALORANT-Win64-Shipping.exe";
 const VGC_SERVICE_NAME: &str = "vgc";
 
 enum Message {
@@ -55,7 +55,7 @@ fn loop_vgc_check() {
     let service_manager =
         ServiceManager::local_computer(None::<&str>, ServiceManagerAccess::CONNECT).unwrap();
 
-    let mut launcher_was_running = is_process_running(RIOT_LAUNCHER_PROCESS_NAME, &system);
+    let mut launcher_was_running = is_process_running(VALORANT_PROCCESS_NAME, &system);
     loop {
         match rx.try_recv() {
             Ok(Message::Quit) => {
@@ -66,7 +66,7 @@ fn loop_vgc_check() {
         }
         // Check if Riot Launcher is running
         system.refresh_processes();
-        let riot_launcher_running = is_process_running(RIOT_LAUNCHER_PROCESS_NAME, &system);
+        let riot_launcher_running = is_process_running(VALORANT_PROCCESS_NAME, &system);
         if riot_launcher_running != launcher_was_running {
             if riot_launcher_running {
                 // Start the VGC service if Riot Launcher is running
