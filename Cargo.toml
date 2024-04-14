@@ -5,11 +5,9 @@ edition = "2021"
 build = "build.rs"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-[package.metadata]
-package-name = "antivanguard"
-package-version = "0.1.0"
-package-authors = ["te <thrzl@icloud.com>"]
-
+[package.metadata.winres]
+LegalCopyright = "Copyright © 2024 thrzl"
+FileDescription = "kills the vgc service when not in use"
 
 [build-dependencies]
 embed-resource = "2.4.2"
