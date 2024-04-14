@@ -1,0 +1,2 @@
+# antivanguard
+valorant's vanguard anticheat raises concern over the fact that it runs 24/7 and considering the fact that riot games is owned by tencent. vanguard often compared to rootkits, as it runs so deep in the system that it's hard to keep in check. this app keeps vanguard disabled when valorant isn't running, and starts it again when valorant is run.
